@@ -19,4 +19,20 @@ class AlbumsController < ApplicationController
     end
   end
   
+  def edit
+    @album_items = Album.find(params[:id])
+  end
+  
+  def update
+    @album_items = Album.find(params[:id])
+    
+    respond_to do |format|
+      if @album_items.update(params.require(:album).permit(:title, :subtitle, :body))
+        format.html { redirect_to albums_path, notice: 'Picture successfully updated' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+  
 end
