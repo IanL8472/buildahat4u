@@ -8,4 +8,6 @@
   <p><%= album_item.body %></p>
   <%= image_tag album_item.thumb_image unless album_item.thumb_image.nil? %>
   <%= link_to "Edit Picture", edit_album_path(album_item) %>
+  <%= link_to "Delete Picture", album_path(album_item), method: :delete, data: { confirm: 'Are you sure?' } %>
+  
 <% end %>

@@ -39,4 +39,13 @@ class AlbumsController < ApplicationController
     @album_items = Album.find(params[:id])
   end
   
+  def destroy
+    @album_items = Album.find(params[:id])
+    
+    @album_items.destroy
+    respond_to do |format|
+      format.html { redirect_to albums_url, notice: 'Photo was removed' }
+    end
+  end
+  
 end
