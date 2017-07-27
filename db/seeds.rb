@@ -13,6 +13,7 @@ puts "10 Blogs created"
     subtitle: "Variation: ",
     body: "Example Data" ,
     main_image: "http://via.placeholder.com/600x400",
+    thumb_image: "http://via.placeholder.com/350x200",
     )
   end
   
